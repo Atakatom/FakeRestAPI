@@ -66,7 +66,23 @@ app.patch("/users/:id", (req, res) => {
     }
 })
 app.delete("/users/:id", (req, res) => {
-
+    if(isNaN(req.params.id)){
+        res.send(400, {
+            message: "Unprocessible Entry"
+        })
+    } else {
+        const userIndex = db.findIndex(u =>  u.id == req.params.id)
+        if(userIndex > -1){
+            db.splice(userIndex,1);
+            res.send(201, {
+                message : "User is deleted!"
+            })
+        } else {
+            res.send(404, {
+                message: "User Not Found"
+            })
+        }
+    }
 })
 
 app.listen(process.env.PORT || 3000, () => {
