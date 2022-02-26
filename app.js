@@ -45,8 +45,8 @@ app.post("/users", (req, res) => {
     res.send(newUser)
 })
 
-// change some values of user
-app.patch("/users", (req, res) => {
+// Update values of user
+app.patch("/users/:id", (req, res) => {
     if(isNaN(req.params.id)){
         res.send(400, {
             message: "Unprocessible Entry"
@@ -54,9 +54,6 @@ app.patch("/users", (req, res) => {
     } else {
         const user = db.find(u => u.id == req.params.id)
         if(user){
-            if(userKeys.length === reqBodyKeys.length){
-                Object
-            }
             Object.keys(req.body).forEach(key => {
                 user[key] = req.body[key];
             })
@@ -68,7 +65,9 @@ app.patch("/users", (req, res) => {
         }
     }
 })
-app.delete("/users/:id", (req, res) => {})
+app.delete("/users/:id", (req, res) => {
+
+})
 
 app.listen(process.env.PORT || 3000, () => {
     console.log("The server is running...");
