@@ -1,4 +1,6 @@
 # FakeRestAPI
 
 
-The detailed readme file is coming until 28 - February. I guarantee you will like it :)
+You can use the deployed API with the link,
+
+https://fake-rest-api-deploy.herokuapp.com/
