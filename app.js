@@ -1,10 +1,16 @@
 const app = require("express")();
 const db = require("./db.json");
 const bodyParser = require("body-parser");
+const ejs = require("ejs");
+
+app.set('view engine','ejs');
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended : true }))
 
+app.get("/",(req,res) => {
+    res.render('index')
+})
 
 //get all users
 app.get("/users", (req, res) => {
