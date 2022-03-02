@@ -4,7 +4,7 @@
   "description": "fake rest api",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "keywords": [
     "rest",
@@ -18,8 +18,5 @@
     "express": "^4.17.3",
     "json-server": "^0.17.0",
     "method-override": "^3.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
   }
 }
