@@ -1,4 +1,3 @@
-#just learninn How to Fork and Sync
 # FakeRestAPI
 
 You can use the API online from the link,
