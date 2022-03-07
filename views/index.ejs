@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,31 +13,37 @@
     <div class="col-md-9 col-sm-9">
 
         <h1>Documentation</h1>
-        
+
         <hr>
-        
+
         <p><a name="intro"></a></p>
-        
+
         <h3>Introduction</h3>
-        
-        <p>Welcome to the FakeRestAPI where you can find fake attributes about users. This documentation should help you familiarise yourself with the resources available and how to consume them with HTTP requests. <br>Most of your problems should be solved just by reading through this documentation.</p>
-        
+
+        <p>Welcome to the FakeRestAPI where you can find fake attributes about users. This documentation should help you
+            familiarise yourself with the resources available and how to consume them with HTTP requests. <br>Most of
+            your problems should be solved just by reading through this documentation.</p>
+
         <p><a name="start"></a></p>
-        
+
         <h3>Getting started</h3>
-        
+
         <p>Let's make your first API request to the FakeRestAPI!</p>
-        
-        <p>Open up a terminal and use <a href="http://curl.haxx.se">curl</a> or <a href="http://httpie.org">httpie</a> to make an API request for a resource. If you don't want to download an additional program then my recommendation is <a href="https://www.postman.com/">postman</a> since it can be used online.</p>
+
+        <p>Open up a terminal and use <a href="http://curl.haxx.se">curl</a> or <a href="http://httpie.org">httpie</a>
+            to make an API request for a resource. If you don't want to download an additional program then my
+            recommendation is <a href="https://www.postman.com/">postman</a> since it can be used online.</p>
 
         <p>In the example below, we're trying to get the first user, Luisa Koelpin: </p>
 
         <pre><code><strong>https://fake-rest-api-deploy.herokuapp.com/users/0</strong></code></pre>
-        
-        <p>We'll use <a href="https://www.postman.com/">postman</a> for our examples as it displays responses nicely and gives us a whole lot more useful information. If you don't want to download pos, just use the <em>curl</em> command instead.</p>
-        
+
+        <p>We'll use <a href="https://www.postman.com/">postman</a> for our examples as it displays responses nicely and
+            gives us a whole lot more useful information. If you don't want to download pos, just use the <em>curl</em>
+            command instead.</p>
+
         <p>Here is the response we get:</p>
-        
+
         <pre><code>HTTP status: 200 OK
         {
             "full_name": "Luisa Koelpin",
@@ -46,58 +53,61 @@
             "email": "Lauriane_Dickens@derrick.us"
         }
         </code></pre>
-        
-        <p>If your response looks slightly different don't panic. This is probably because I might be adding new features to the FakeRestAPI.</p>
-        
+
+        <p>If your response looks slightly different don't panic. This is probably because I might be adding new
+            features to the FakeRestAPI.</p>
+
         <p><a name="base"></a></p>
-        
+
         <h3>Base URL</h3>
-        
-        <p>The <strong>Base URL</strong> is the root URL for all of the API, if you ever make a request to swapi and you get back a <strong>404 NOT FOUND</strong> response then check the Base URL first.</p>
-        
+
+        <p>The <strong>Base URL</strong> is the root URL for all of the API, if you ever make a request to FakeRestApi
+            and you get back a <strong>404 NOT FOUND</strong> response then check the Base URL first.</p>
+
         <p>The Base URL for FakeRestAPI is:</p>
-        
+
         <pre><code><strong>https://fake-rest-api-deploy.herokuapp.com/</strong></code></pre>
-        
+
         <p>This API let's you do all Create, Read, Update, Delete operations on any user.</p>
-        
+
         <h3>The name of our JSON file is <i>USERS</i></h3>
 
         <p><strong>Attributes:</strong></p>
-        
-        <ul>
-        <li><code>full_name</code> <em>string</em>
-        -- The name and surname of a user.</li>
-        <li><code>country</code> <em>string</em>
-        -- The country where the user is from.</li>
-        <li><code>created_at</code> <em>date</em>
-        -- Full date of the time when the user's account is created.</li>
-        <li><code>id</code> <em>string</em>
-        -- Unique id of that user.</li>
-        <li><code>email</code> <em>string</em>
-        -- The email adress of that user.
-        
-        <ul>
-            
-            <li> <h3>Create</h3>
-                
-                <p>POST a single user with the URL:</p>
-        
-                <pre><code><strong>https://fake-rest-api-deploy.herokuapp.com/users</strong></code></pre>
-                
-                <p>With the body:</p>
 
-                <pre><code>
+        <ul>
+            <li><code>full_name</code> <em>string</em>
+                -- The name and surname of a user.</li>
+            <li><code>country</code> <em>string</em>
+                -- The country where the user is from.</li>
+            <li><code>created_at</code> <em>date</em>
+                -- Full date of the time when the user's account is created.</li>
+            <li><code>id</code> <em>string</em>
+                -- Unique id of that user.</li>
+            <li><code>email</code> <em>string</em>
+                -- The email adress of that user.
+
+                <ul>
+
+                    <li>
+                        <h3>Create</h3>
+
+                        <p>POST a single user with the URL:</p>
+
+                        <pre><code><strong>https://fake-rest-api-deploy.herokuapp.com/users</strong></code></pre>
+
+                        <p>With the body:</p>
+
+                        <pre><code>
                     {
                         "full_name" : "Atakan Yontar",
                         "country" : "Turkey",
                         "email" : "atakanyontar@gmail.com"
                     }
                 </code></pre>
-                
-                <p><strong>Example response:</strong></p>
-                
-                <pre><code>HTTP/1.0 200 OK
+
+                        <p><strong>Example response:</strong></p>
+
+                        <pre><code>HTTP/1.0 200 OK
                 {
                     "id": 1646155611621,
                     "full_name": "Atakan Yontar",
@@ -106,20 +116,21 @@
                     "created_at": "2022-03-01T17:26:51.621Z"
                 }
                 </code></pre>
-            
-            </li>
-            <li> 
-                <h3>Read</h3>
-                
-                <p>GET a single user with to the URL:</p>
-        
-                <pre><code><strong>https://fake-rest-api-deploy.herokuapp.com/users/0</strong></code></pre>
 
-                <p>after users 0 can be any number if the user with such id exists then API will answer by responding that user</p>
-                
-                <p><strong>Example response:</strong></p>
-                
-                <pre><code>HTTP status: 200 OK
+                    </li>
+                    <li>
+                        <h3>Read</h3>
+
+                        <p>GET a single user with to the URL:</p>
+
+                        <pre><code><strong>https://fake-rest-api-deploy.herokuapp.com/users/0</strong></code></pre>
+
+                        <p>after users 0 can be any number if the user with such id exists then API will answer by
+                            responding that user</p>
+
+                        <p><strong>Example response:</strong></p>
+
+                        <pre><code>HTTP status: 200 OK
                     {
                         "full_name": "Luisa Koelpin",
                         "country": "Austria",
@@ -129,13 +140,13 @@
                     }
                 </code></pre>
 
-                <p>GET all of the users with to the URL:</p>
-        
-                <pre><code><strong>https://fake-rest-api-deploy.herokuapp.com/users/</strong></code></pre>
-                
-                <p><strong>Example response:</strong></p>
-                
-                <pre><code>HTTP status: 200 OK
+                        <p>GET all of the users with to the URL:</p>
+
+                        <pre><code><strong>https://fake-rest-api-deploy.herokuapp.com/users/</strong></code></pre>
+
+                        <p><strong>Example response:</strong></p>
+
+                        <pre><code>HTTP status: 200 OK
                     {
                         "full_name": "Luisa Koelpin",
                         "country": "Austria",
@@ -146,29 +157,30 @@
 
                     ... with the rest of the users
                 </code></pre>
-            
-            </li>
-            <li> 
-                <h3>Update</h3>
-                
-                <p>Modify the name and country of user 3 with the URL:</p>
 
-                <pre><code><strong>https://fake-rest-api-deploy.herokuapp.com/users/3</strong></code></pre>
+                    </li>
+                    <li>
+                        <h3>Update</h3>
 
-                <p>after users 3 can be any number if the user with such id exists then API will answer by responding that user</p>
-                
-                <p>With the body:</p>
+                        <p>Modify the name and country of user 3 with the URL:</p>
 
-                <pre><code>
+                        <pre><code><strong>https://fake-rest-api-deploy.herokuapp.com/users/3</strong></code></pre>
+
+                        <p>after users 3 can be any number if the user with such id exists then API will answer by
+                            responding that user</p>
+
+                        <p>With the body:</p>
+
+                        <pre><code>
                     {
                         "full_name": "Atakan Yontar",
                         "country": "Turkey"
                     }
                 </code></pre>
 
-                <p><strong>Example response:</strong></p>
-                
-                <pre><code>HTTP/1.0 200 OK
+                        <p><strong>Example response:</strong></p>
+
+                        <pre><code>HTTP/1.0 200 OK
                     {
                         "full_name": "Atakan Yontar",
                         "country": "Turkey",
@@ -177,30 +189,34 @@
                         "email": "Freddie@taylor.com"
                     }
                 </code></pre>
-            
-            </li>
-            <li> 
-                <h3>Delete</h3>
-                
-                <p>Delete the name and country of user 3 with the URL:</p>
-        
-                <pre><code><strong>https://fake-rest-api-deploy.herokuapp.com/users/3</strong></code></pre>
 
-                <p>after users 3 can be any number if the user with such id exists then API will answer by responding that user</p>
-                
-                <p><strong>Example response:</strong></p>
-                
-                <pre><code>HTTP/1.0 200 OK
+                    </li>
+                    <li>
+                        <h3>Delete</h3>
+
+                        <p>Delete the name and country of user 3 with the URL:</p>
+
+                        <pre><code><strong>https://fake-rest-api-deploy.herokuapp.com/users/3</strong></code></pre>
+
+                        <p>after users 3 can be any number if the user with such id exists then API will answer by
+                            responding that user</p>
+
+                        <p><strong>Example response:</strong></p>
+
+                        <pre><code>HTTP/1.0 200 OK
                 {
                     "message": "User is deleted!"
                 }
                 </code></pre>
-            
-            </li>
-        </ul>
-        
-        </div>
 
-    <p>Here is the github <a href="https://github.com/Atakatom/FakeRestAPI">link</a> for the source code. Created by <strong>Atakan Yontar.</strong></p>
+                    </li>
+                </ul>
+
+    </div>
+
+    <p>Here is the github <a href="https://github.com/Atakatom/FakeRestAPI">link</a> for the source code. Created by
+        <strong>Atakan Yontar.</strong>
+    </p>
 </body>
+
 </html>
